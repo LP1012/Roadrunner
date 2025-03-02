@@ -1,0 +1,3 @@
+[submodule "material-heat-flow"]
+	path = material-heat-flow
+	url = https://lobogit.unm.edu/unm-nuclear-engineering/material-heat-flow.git

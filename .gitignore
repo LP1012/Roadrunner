@@ -339,3 +339,5 @@ share/
 *.hpc_result
 *.hpc_submit
 roadrunner.yaml
+
+*.msh

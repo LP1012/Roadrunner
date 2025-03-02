@@ -3,13 +3,13 @@
 
 [Mesh]
     type = FileMesh
-    file = '../../meshes/2D_0.04.msh'
+    file = '../../../meshes/W_BragMatch2.msh'
 []
 
 [Variables]
     [u]
         # Values in Kelvin
-        order = first 
+        order = second 
         family = Lagrange
         initial_condition = 250
     []
@@ -24,7 +24,6 @@
         type = HeatSource
         variable = u
         function = SRIM_heating
-        # value = 1e10
     []
         
 []
@@ -40,13 +39,8 @@
     [top]
         type = NeumannBC
         boundary = top
-        value = 0 
+        value = 0
         variable = u
-
-        # type = DirichletBC
-        # boundary = top
-        # variable = u
-        # value = 350
     []
     [wall]
         type = NeumannBC
@@ -60,19 +54,15 @@
         boundary = bottom
         value = 300
         variable = u
-
-        # type = NeumannBC
-        # boundary = bottom
-        # value = 0 
-        # variable = u
     []
 []
 
 [Functions]
     [SRIM_heating]
         type = PiecewiseLinear
-        data_file = test_mooseHEATING_phi=1.000e+08.csv
-        scale_factor = 1e4
+        data_file = test_mooseHEATING_phi=1.000e+13.csv
+        scale_factor = 1e5
+        axis = y
     []
 []
 
