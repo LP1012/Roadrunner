@@ -341,3 +341,4 @@ share/
 roadrunner.yaml
 
 *.msh
+/material-heat-flow
