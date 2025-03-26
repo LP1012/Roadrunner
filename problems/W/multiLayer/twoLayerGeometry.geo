@@ -41,7 +41,7 @@ Mesh.Optimize = 1;      // Optimize mesh quality
 Mesh.Smoothing = 5;     // Smooth mesh with (int) steps
 
 // Set mesh size globally or on individual geometries
-Mesh.MeshSizeFactor = 0.1;   // This will get small in a hurry
+Mesh.MeshSizeFactor = 1;   // This will get small in a hurry
 
 
 // Generate 3D mesh

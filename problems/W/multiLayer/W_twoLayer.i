@@ -6,17 +6,19 @@
 # the heat conduction across them. Once this has been accomplished, a different input file will be created.
 
 [Mesh]
-    type = FileMesh
-    file = 'twoLayerMesh.msh'
+  type = FileMesh
+  file = 'twoLayerMeshCubit.e'
 
-    block_id = '1 2' # these come from the .geo file made with Gmsh
-    block_name = 'sample carbon_tape' # can be arbitrarily selected
+  block_id = '1 2' # these come from the .geo file made with Gmsh
+  block_name = 'carbon_tape sample' # can be arbitrarily selected
+
+    
 []
 
 [Variables]
     [u]
         # Values in Kelvin
-        order = second 
+        order = FIRST 
         family = Lagrange
         initial_condition = 350
     []
@@ -47,9 +49,10 @@
     [sample_top]
         type = NeumannBC
         boundary = sample_top
-        value = 32141
+        value = 3214.1
         variable = u
     []
+    
     [sample_wall]
         type = NeumannBC
         boundary = sample_wall
@@ -70,7 +73,7 @@
     []
     [material_interface]
         type = HeatConductionBC
-        boundary = carbon_top
+        boundary = material_interface
         variable = u
     []
 []
@@ -90,6 +93,11 @@
   # Set PETSc parameters to optimize solver efficiency
   petsc_options_iname = '-pc_type -pc_hypre_type' # PETSc option pairs with values below
   petsc_options_value = ' hypre    boomeramg'
+
+  # USE THIS FOR DEBUGGING
+  # petsc_options = '-pc_svd_monitor'
+  # petsc_options_iname = '-pc_type'
+  # petsc_options_value = 'svd'
 []
 
 [Outputs]

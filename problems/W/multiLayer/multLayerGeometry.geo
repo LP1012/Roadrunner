@@ -6,8 +6,8 @@ SetFactory("OpenCASCADE");
 
 // aluminum table (material may be subject to change)
 aluminumHeight = 0.1;	
-aluminumWidth = 1;
-aluminumLength = 1;
+aluminumWidth = 0.3;
+aluminumLength = 0.3;
 
 Box(4) = {-aluminumWidth/2, -aluminumLength/2, 0, aluminumWidth, aluminumLength, aluminumHeight};
 
